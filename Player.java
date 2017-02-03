@@ -1,46 +1,58 @@
+/**
+ TO-DO: camelcase your methods
+*/
 public class Player {
   //properties
   private int shipsAlive;
   private int shipsSunk;
   private boolean winning; 
+  private String name;
 
   //constructor
  
-public Player(){
+  public Player(){
+
+    shipsAlive = 4;
+    shipsSunk = 0;
+    winning = false;
+  }
   
-  shipsAlive = 4;
-  shipsSunk = 0;
-  winning = true;
+  public Player(String newName){
+    name = newName; 
+    shipsAlive = 4;
+    shipsSunk = 0;
+    winning = false;
+  }
   
-}
-  
-   public String getshipsAlive(){
+   public int getshipsAlive(){
     return shipsAlive;
    }
-   public String getshipsSunk(){
+  
+   public int getshipsSunk(){
     return shipsSunk;
    }
+  
    public boolean getwinning(){
     return winning;
    }
+  
   //getters and setters
   public void setshipsAlive(int newShipsAlive){
-shipsAlive = newShipsAlive;
-}
+    shipsAlive = newShipsAlive;
+  }
+  
   public void setshipsSunk(int newShipsSunk){
-shipsSunk = newShipsSunk;
-    
-    public void setwinning(boolean newWinning){
-winning = newWinning;
-}
+    shipsSunk = newShipsSunk;
+  }
+  
+  public void setwinning(boolean newWinning){
+    winning = newWinning;
+  }
   
   //toString - describes the object for output
 
-     public String toString(){
+  public String toString(){
     return shipsAlive + " " + shipsSunk + " " + winning;
-     
   }
-}
-  
 
 }
