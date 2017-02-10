@@ -12,6 +12,10 @@ public class BattleShipBoard{
     //board is initialized  
   }
   
+  public char[][] getBoard(){
+    return board;
+  }
+  
   public void setupShips(int x, int y){
     board[x][y] = '.'; 
   }

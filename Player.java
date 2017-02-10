@@ -24,6 +24,15 @@ public class Player {
     winning = false;
   }
   
+  public String getName(){
+    return name;
+  }
+  
+  public void setName(String newName){
+    
+    this.name = newName;
+  }
+  
    public int getshipsAlive(){
     return shipsAlive;
    }
@@ -52,7 +61,7 @@ public class Player {
   //toString - describes the object for output
 
   public String toString(){
-    return shipsAlive + " " + shipsSunk + " " + winning;
+    return name + " " + shipsAlive + " " + shipsSunk + " " + winning;
   }
 
 }
