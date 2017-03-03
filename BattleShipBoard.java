@@ -18,7 +18,7 @@ public class BattleShipBoard{
   }
   
   public void setupShips(int x, int y){
-    board[x][y] = '*'; 
+    board[x][y-1] = '*'; 
   }
   
   public void printBoard(){
