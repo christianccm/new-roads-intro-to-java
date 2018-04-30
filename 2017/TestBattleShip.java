@@ -40,6 +40,29 @@ public class TestBattleShip{
     Scanner input = new Scanner(System.in);
     
     //Output directions/intro to the console
+    System.out.println("");
+    System.out.println("" +                       
+  "\n" + "        ____        _   _   _      ____  _     _   " +    
+ "\n" + "        | __ )  __ _| |_| |_| | ___/ ___|| |__ (_)_ __  " + 
+ "\n" + "        |  _ \\ / _` | __| __| |/ _ \\___ \\| '_ \\| | '_ \\ " +
+ "\n" + "        | |_) | (_| | |_| |_| |  __/___) | | | | | |_) |" +
+ "\n" + "        |____/ \\__,_|\\__|\\__|_|\\___|____/|_| |_|_| .__/ " +
+ "\n" + "                                                 |_|    " +
+ "\n" + "                                                 " +                            
+ "\n" + "                                                 " +
+ "\n" + "                                      |__             " +
+ "\n" + "                                      |\\/             " +
+ "\n" + "                                      ---             " +
+ "\n" + "                                      / | [           " +
+ "\n" + "                               !      | |||           " +
+ "\n" + "                             _/|     _/|-++'          " +
+ "\n" + "                         +  +--|    |--|--|_ |-       " +
+ "\n" + "                      { /|__|  |/\\__|  |--- |||__/    " +
+ "\n" + "                     +---------------___[}-_===_.'____                 /\\ " +
+ "\n" + "                 ____`-' ||___-{]_| _[}-  |     |_[___\\==--            \\/   _ " +
+ "\n" + "  __..._____--==/___]_|__|_____________________________[___\\==--____,------' .7 " +
+ "\n" + " |                                                                     BB-61/ " +
+ "\n" + "  \\_________________________________________________________________________|"); 
     System.out.println("Let's play battleship!");
     System.out.println("What's your name?");
     human = new Player(input.next());
@@ -47,9 +70,9 @@ public class TestBattleShip{
     
     //set up user ships
     System.out.println("You get 1 ship, choose it's location...");
-    System.out.println("Enter in x location:");
+    System.out.println("Enter in x location (1-5):");
     row = input.nextInt();
-    System.out.println("Enter in y location");
+    System.out.println("Enter in y location (1-5):");
     col = input.nextInt();
     userBoard.setupShips(row, col);
     System.out.println("Your current board...");
@@ -58,7 +81,7 @@ public class TestBattleShip{
     //set up AI ships
     aiShips = ai.generateShipLocation();
     aiBoard.setupShips(aiShips[0], aiShips[1]);
-    System.out.println("AI is setting up board...");
+    System.out.println("------------------------");
     aiBoard.printBoard(); //testing
     
     //user attacks 
@@ -68,12 +91,13 @@ public class TestBattleShip{
     System.out.println("Enter in y location");
     col = input.nextInt();
     
-    if(aiBoard.getBoard()[row][col] == '.'){
+    if(aiBoard.getBoard()[row][col] == '*'){
       System.out.println("Ship sunk!");
     }
     else{
       System.out.println("Missed!");
       System.out.println("You are off by " + Math.abs(aiShips[0] - row) + " row and " + Math.abs(aiShips[1] - col) + " columns."); 
+      //fix clue calculation for new changes
       guessBoard.getBoard()[row][col] = 'M';
     }
     
