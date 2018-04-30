@@ -1,48 +1,36 @@
 public class Card{
   
-  
-  //first - declare the properties/members, aka info/details about the object
-  private String rank;
-  private String color;
+  //class attributes
   private String suit;
+  private String value;
   
-  //second - create a constructor
+  //constructor
   public Card(){
-    rank = "A";
-    color = "black";
-    suit = "club";
-    
+    this.suit = "Spade";
+    this.value = "Ace";
   }
   
-  //getters and setters - mutators and accessors
+  //getters and setters
   
-  //getters
-  public String getRank(){
-    return rank;
+  public void setSuit(String suit){
+    this.suit = suit;
   }
-  public String getColor(){
-    return color;
-  }
+  
   public String getSuit(){
-    return suit;
+    return this.suit;
   }
   
-  //setter
-  public void setRank(String newRank){
-    rank = newRank;
-  }
-  public void setColor(String newColor){
-    color = newColor;
-  }
-  public void setSuit(String newSuit){
-    suit = newSuit;
+  public void setValue(String value){
+    this.value = value;
   }
   
-  //outputs details of the object
+  public String getValue(){
+    return this.value;
+  }
+  
+  //toString method - print out class info
   public String toString(){
-    return rank + " " + color + " " + suit;
+    return "Card: " + this.suit + " " + this.value;
   }
-  
-  
   
 }
